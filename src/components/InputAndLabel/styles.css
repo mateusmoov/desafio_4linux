@@ -1,0 +1,26 @@
+.textLabel{
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    display: block;
+}
+
+.input{
+    font-family: 'Montserrat';
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: "sans-serif";
+    margin-bottom: 1.7rem;
+}
+.input::placeholder{
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
+
+.input[type="text"]{
+    font-family: 'Montserrat';
+    font-size: 1rem;
+}
