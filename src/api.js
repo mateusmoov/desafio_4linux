@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: 'http://localhost:3002/api',
+    baseURL: 'https://secure-fortress-15127.herokuapp.com/api',
 })
