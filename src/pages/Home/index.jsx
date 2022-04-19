@@ -1,9 +1,24 @@
+import React, { useState, useEffect } from "react";
+import { Card } from "../../components";
+import axios from "axios";
 const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
-}
+  const [data, setData] = useState([]);
 
-export default Home
+  useEffect(() => {
+    axios.get("https://api.publicapis.org/entries").then((response) => {
+      setData(response.data.entries);
+    });
+  }, []);
+
+  return data.map((entries) => (
+    <div className="cardResult">
+      <Card
+        title={entries.API}
+        subtitle={entries.Description}
+        type={entries.Category}
+      />
+    </div>
+  ));
+};
+
+export default Home;

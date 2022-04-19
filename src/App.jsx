@@ -18,16 +18,14 @@ const CustomRoute = ({ isPrivate, ...rest }) => {
 
 function App() {
   return (
-    <div className="App">
-      <AuthProvider>
-        <Router history={history}>
-          <Switch>
-            <CustomRoute exact path="/login" component={Login} />
-            <CustomRoute isPrivate exact path="/" component={Home} />
-          </Switch>
-        </Router>
-      </AuthProvider>
-    </div>
+    <AuthProvider>
+      <Router history={history}>
+        <Switch>
+          <CustomRoute exact path="/login" component={Login} />
+          <CustomRoute isPrivate exact path="/" component={Home} />
+        </Switch>
+      </Router>
+    </AuthProvider>
   );
 }
 
