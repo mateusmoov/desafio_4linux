@@ -32,6 +32,7 @@ const AuthProvider = ({ children }) => {
         localStorage.setItem("token", data);
         api.defaults.headers.Autorization = `Bearer ${data}`;
         setAuthenticated(true);
+        history.go(0);
       })
       .catch((error) => {
         console.log(error);
