@@ -10,14 +10,13 @@ const Home = () => {
     });
   }, []);
 
-  return data.map((entries) => (
-    <div className="cardResult">
-      <Card
-        title={entries.API}
-        subtitle={entries.Description}
-        type={entries.Category}
-      />
-    </div>
+  return data.map((entries, index) => (
+    <Card
+      key={index}
+      title={entries.API}
+      subtitle={entries.Description}
+      type={entries.Category}
+    />
   ));
 };
 
