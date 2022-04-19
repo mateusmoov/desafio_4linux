@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
 import api from "../api";
 import history from "../history";
 
@@ -11,6 +10,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const token = localStorage.getItem("token");
     if (token) {
       setAuthenticated(true);
