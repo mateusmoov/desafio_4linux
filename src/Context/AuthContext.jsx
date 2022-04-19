@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import api from "../api";
 import history from "../history";
 
@@ -6,6 +7,7 @@ const Context = createContext();
 
 const AuthProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -35,11 +37,11 @@ const AuthProvider = ({ children }) => {
         history.go(0);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.response.data.message);
       });
   };
   return (
-    <Context.Provider value={{ authenticated, handleLogin }}>
+    <Context.Provider value={{ authenticated, handleLogin, error }}>
       {children}
     </Context.Provider>
   );

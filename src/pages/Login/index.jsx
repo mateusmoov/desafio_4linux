@@ -4,7 +4,7 @@ import { Context } from "../../Context/AuthContext";
 import "./styles.css";
 
 const Login = () => {
-  const { handleLogin, authenticated } = useContext(Context);
+  const { handleLogin, error } = useContext(Context);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -30,6 +30,7 @@ const Login = () => {
           placeHolder="Senha"
           onChange={(evt) => setPassword(evt.target.value)}
         />
+        <span className="error-message">{error}</span>
         <button type="submit" className="button">
           Entrar
         </button>
